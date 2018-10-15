@@ -48,12 +48,24 @@ export class ShowListPage {
     }
 
     findAll() {
-        this.service.findAll()
-            .then(data => {
-                this.shows = data;
-                this.showsForSearch = data;
-            })
-            .catch(error => alert(error));
+        this.shows = [
+            {
+                "name": "Super activité au cirque",
+                "description": "le cirque c'est cool",
+                "lat": 1.2345,
+                "long": 43.1111,
+                "address": "1 rue de la mer 75000 Paris",
+                "image": "https://www.wanimo.com/veterinaire/images/articles/chat/chaton-qui-miaule.jpg",
+            },
+            {
+                "name": "Super activité au zoo",
+                "description": "le zoo c'est cool",
+                "lat": 1.41,
+                "long": 43.0000,
+                "address": "2 rue de la mer 75000 Paris",
+                "image": "https://www.wanimo.com/veterinaire/images/articles/chat/chaton-qui-miaule.jpg",
+            },
+        ];
     }
 
     showMap() {
