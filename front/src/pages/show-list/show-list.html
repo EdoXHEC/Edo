@@ -13,10 +13,10 @@
 
     <ion-list *ngIf="viewMode==='list'">
 
-        <ion-item-sliding *ngFor="let show of shows">
+        <ion-item-sliding *ngFor="let show of showsForSearch">
             <button ion-item (click)="openShowDetail(show)">
                 <ion-thumbnail item-left>
-                    <img src="{{show.image}}"/>
+                    <img src="http://localhost:1337{{show.image.url}}"/>
                 </ion-thumbnail>
                 <h2>{{show.name}}</h2>
             </button>
