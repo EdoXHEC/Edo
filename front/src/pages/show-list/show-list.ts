@@ -30,16 +30,22 @@ export class ShowListPage {
 
     onInput(event) {
          // Reset items back to all of the items
-        this.shows = this.showsForSearch;
-
         // set val to the value of the searchbar
         let val = this.searchKey;
 
         // if the value is an empty string don't filter the items
         if (val && val.trim() != '') {
-          this.shows = this.shows.filter((show) => {
-            return (show.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+          this.showsForSearch = this.shows.filter((show) => {
+            return ((
+                show.name.toLowerCase().indexOf(val.toLowerCase()) > -1
+                ) && (
+                    true
+                    //this.selectedTag = show.tag
+                )
+            );
           })
+        } else {
+            this.showsForSearch = this.shows.slice();
         }
     }
 
@@ -48,12 +54,12 @@ export class ShowListPage {
     }
 
     findAll() {
-        this.service.findAll()
-            .then(data => {
-                this.shows = data;
-                this.showsForSearch = data;
-            })
-            .catch(error => alert(error));
+        // this.service.findAll().then(data => {
+        //     this.showsForSearch = data;
+        //     this.shows = data;
+        // });
+        this.shows = this.service.findAllDummy();
+        this.showsForSearch = this.shows.slice();
     }
 
     showMap() {
@@ -72,8 +78,8 @@ export class ShowListPage {
         }
         this.markersGroup = leaflet.layerGroup([]);
         this.shows.forEach(show => {
-            if (show.lat, show.lng) {
-                let marker: any = leaflet.marker([show.lat, show.lng]).on('click', event => this.openShowDetail(event.target.data));
+            if (show.lat && show.long) {
+                let marker: any = leaflet.marker([show.lat, show.long]).on('click', event => this.openShowDetail(event.target.data));
                 marker.data = show;
                 this.markersGroup.addLayer(marker);
             }

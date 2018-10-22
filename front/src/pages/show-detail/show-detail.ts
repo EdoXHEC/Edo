@@ -14,9 +14,6 @@ export class ShowDetailPage {
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public ShowService: ShowService, public toastCtrl: ToastController) {
         this.show = this.navParams.data;
-        ShowService.findById(this.show.id).then(
-            show => this.show = show
-        );
     }
 
     favorite(show) {

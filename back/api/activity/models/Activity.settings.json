@@ -1,0 +1,43 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "activity",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "text"
+    },
+    "lat": {
+      "default": "",
+      "type": "float"
+    },
+    "long": {
+      "default": "",
+      "type": "float"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "adresse": {
+      "default": "",
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "tag": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}
