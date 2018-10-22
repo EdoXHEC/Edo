@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Show</ion-title>
+        <ion-title>Activité</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -21,11 +21,11 @@
 
         <ion-item>
             <button *ngIf="canFavorite(show)" ion-button icon-left (click)="favorite(show)" clear item-left>
-                <ion-icon name="star"></ion-icon>
+                <ion-icon name="heart"></ion-icon>
                 Favorite
             </button>
             <button *ngIf="!canFavorite(show)" ion-button icon-left (click)="unfavorite(show)" clear item-left>
-                <ion-icon name="star"></ion-icon>
+                <ion-icon name="heart-outline"></ion-icon>
                 UnFavorite
             </button>
             <button ion-button icon-left (click)="share(show)" clear item-right>

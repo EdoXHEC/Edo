@@ -1,5 +1,5 @@
 .about-header {
-  background-color: #434954;
+  background-color: #c9f3f8;
   padding: 16px;
   width: 100%;
   min-height: 150px;
@@ -7,15 +7,15 @@
 }
 
 .about-header img {
-  max-width: 200px;
-  min-height: 115px;
+  max-width: 600px;
+  min-height: 315px;
   margin-left: -15px;
   padding: 25px 0 20px 0;
 }
 
 .about-info p {
-  color: #697072;
-  text-align: left;
+  color: #3970e6;
+  text-align: center;
 }
 
 .about-info ion-icon {
@@ -32,6 +32,7 @@
 
 .ios .about-info {
   text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .ios .about-info ion-icon {
