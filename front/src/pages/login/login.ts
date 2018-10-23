@@ -12,7 +12,7 @@ export class LoginPage {
 
     identifier: string = "";
     password: string = "";
-    errorDescription: any = { message: '' };
+    errorDescription: any = { message: 'Votre identifiant et/ou votre mot de passe sont incorrects' };
 
     constructor(public navCtrl: NavController, public userService: UserService) {
     }

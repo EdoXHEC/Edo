@@ -19,6 +19,7 @@ export class ShowListPage {
     map;
     markersGroup;
     serverUrl = SERVER_URL;
+    tag;
 
     constructor(public navCtrl: NavController, public service: ShowService, public config: Config) {
         this.findAll();
@@ -40,8 +41,9 @@ export class ShowListPage {
                 show.name.toLowerCase().indexOf(val.toLowerCase()) > -1
                 ) && (
                     true
-                    //this.selectedTag = show.tag
-                )
+                (this.selectedTag = show.tag)
+                
+                    )
             );
           })
         } else {
@@ -54,12 +56,12 @@ export class ShowListPage {
     }
 
     findAll() {
-        // this.service.findAll().then(data => {
-        //     this.showsForSearch = data;
-        //     this.shows = data;
-        // });
-        this.shows = this.service.findAllDummy();
-        this.showsForSearch = this.shows.slice();
+        this.service.findAll().then(data => {
+        this.showsForSearch = data;
+        this.shows = data;
+        });
+        // this.shows = this.service.findAllDummy();
+        // this.showsForSearch = this.shows.slice();
     }
 
     showMap() {
