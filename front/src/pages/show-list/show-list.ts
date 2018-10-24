@@ -20,7 +20,7 @@ export class ShowListPage {
     markersGroup;
     serverUrl = SERVER_URL;
     tag;
-    selectedTag;
+    selectedTag: string = "";
 
     constructor(public navCtrl: NavController, public service: ShowService, public config: Config) {
         this.findAll();
@@ -31,27 +31,22 @@ export class ShowListPage {
     }
 
     onInput(event) {
-         // Reset items back to all of the items
-        // set val to the value of the searchbar
-        let val = this.searchKey;
-
         // if the value is an empty string don't filter the items
-        if (val && val.trim() != '') {
-          this.showsForSearch = this.shows.filter((show) => {
-            return ((
-                show.name.toLowerCase().indexOf(val.toLowerCase()) > -1
+        setTimeout(() => {
+            let val = this.searchKey;
+            let selectedTag = this.selectedTag;
+            this.showsForSearch = this.shows.filter((show) => 
+                (
+                    !val || val.trim() === '' || show.name.toLowerCase().indexOf(val.toLowerCase()) > -1
                 ) && (
-                this.selectedTag == show.tag
-                    )
+                    !selectedTag || selectedTag === show.tag
+                )
             );
-          })
-        } else {
-            this.showsForSearch = this.shows.slice();
-        }
+        });
     }
 
     onCancel(event) {
-        this.findAll();
+        this.onInput(event);
     }
 
     findAll() {

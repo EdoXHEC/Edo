@@ -11,6 +11,18 @@
 
 <ion-content class="show-list">
 
+    <ion-segment [(ngModel)]="selectedTag">
+        <ion-segment-button value="" (ionSelect)="onInput()">
+            Tous
+        </ion-segment-button>
+        <ion-segment-button value="tag1" (ionSelect)="onInput()">
+            Tag 1
+        </ion-segment-button>
+        <ion-segment-button value="tag2" (ionSelect)="onInput()">
+            Tag 2
+        </ion-segment-button>
+    </ion-segment>
+
     <ion-list *ngIf="viewMode==='list'">
 
         <ion-item-sliding *ngFor="let show of showsForSearch">
