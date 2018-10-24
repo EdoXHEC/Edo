@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-card *ngIf="show.name">
-        <img src="{{show.image}}"/>
+        <img src="http://localhost:1337{{show.image.url}}"/>
         <ion-card-content>
             <h2 class="card-title">{{show.name}}</h2>
             <p>{{show.description}}</p>
