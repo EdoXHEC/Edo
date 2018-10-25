@@ -65,6 +65,7 @@ export class ShowService {
                 "long": 2.3488001,
                 "address": "Parc Zoologique de Paris, Avenue Daumesnil, 75012 Paris",
                 "image": "assets/img/elephants.JPG",
+                "price": "12 euros",
             },
             {
                 "name": "Visite : Tour Eiffel",

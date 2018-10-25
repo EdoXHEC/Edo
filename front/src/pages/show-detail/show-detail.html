@@ -11,13 +11,6 @@
             <h2 class="card-title">{{show.name}}</h2>
             <p>{{show.description}}</p>
         </ion-card-content>
-        <ion-list>
-            <ion-item>
-                <ion-icon item-left name="pricetag"></ion-icon>
-                <h3>Price</h3>
-                <ion-note item-right>{{show.price}}</ion-note>
-            </ion-item>
-        </ion-list>
 
         <ion-item>
             <button *ngIf="canFavorite(show)" ion-button icon-left (click)="favorite(show)" clear item-left>

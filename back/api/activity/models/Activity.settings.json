@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "activity",
   "info": {
     "name": "activity",
     "description": ""
@@ -38,6 +38,10 @@
     "tag": {
       "default": "",
       "type": "text"
+    },
+    "Price": {
+      "default": "",
+      "type": "integer"
     }
   }
 }
